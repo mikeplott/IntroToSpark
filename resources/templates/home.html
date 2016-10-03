@@ -1,8 +1,27 @@
 <html xmlns="http://www.w3.org/1999/html">
-    <body>
-    hello, {{name}}!
-    <br>
-    <br>
-    <a href="/login">Login</a>
-    </body>
+<body>
+{{#name}}
+Hello, {{name}}!
+<br>
+<br>
+<form action = "/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+{{/name}}
+<br>
+<br>
+{{^name}}
+<a href="/login">Login</a>
+{{/name}}
+<br>
+<br>
+<br>
+
+Past users:<br>
+<ol>
+{{#pastUsers}}
+<li>{{name}}</li>
+{{/pastUsers}}
+</ol>
+</body>
 </html>
